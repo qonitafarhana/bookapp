@@ -21,6 +21,13 @@ $router->get('/key', function () {
     return \Illuminate\Support\Str::random(32);
 });
 
+//crud author
+$router->get('author', 'AuthorController@index');
+$router->get('author/{id}','AuthorController@Id');
+$router->post('author', 'AuthorController@store');
+$router->put('author/{id}', 'AuthorController@update');
+$router->delete('author/{id}', 'AuthorController@destroy');
+
 //crud buku
 $router->get('book', 'BooksController@index');
 $router->get('book/{id}','BooksController@Id');
@@ -28,10 +35,5 @@ $router->post('book', 'BooksController@store');
 $router->put('book/{id}', 'BooksController@update');
 $router->delete('book/{id}', 'BooksController@destroy');
 
-//crud author
-$router->get('author', 'AuthorController@index');
-$router->get('author/{id}','AuthorController@Id');
-$router->post('author', 'AuthorController@store');
-$router->put('author/{id}', 'AuthorController@update');
-$router->delete('author/{id}', 'AuthorController@destroy');
+
 
